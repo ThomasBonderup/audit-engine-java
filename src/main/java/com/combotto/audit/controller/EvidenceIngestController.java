@@ -1,0 +1,32 @@
+package com.combotto.audit.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.combotto.audit.api.IngestEvidenceRequest;
+import com.combotto.audit.mappers.EvidenceMapper;
+import com.combotto.audit.model.EvidenceEnvelope;
+import com.combotto.audit.services.EvidenceIngestService;
+
+@RestController
+@RequestMapping("/evidence")
+public class EvidenceIngestController {
+
+  private final EvidenceIngestService ingestService;
+
+  public EvidenceIngestController(EvidenceIngestService ingestService) {
+    this.ingestService = ingestService;
+  }
+
+  @PostMapping
+  public ResponseEntity<Void> ingest(@RequestBody IngestEvidenceRequest req) {
+    long auditRunId = 123L;
+    EvidenceEnvelope envelope = EvidenceMapper.toEnvelope(req, auditRunId);
+    ingestService.ingest(envelope);
+    return ResponseEntity.accepted().build();
+  }
+
+}
