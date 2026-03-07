@@ -28,6 +28,26 @@ It’s not a toy. It’s a learning vehicle for:
 - Security foundations (JWT, TLS, cert chains)
 - Reliability engineering practices
 
+## Local startup with Docker Compose
+
+The repository includes a `docker-compose.yml` that can start Kafka, Kafka UI, and the Spring Boot API together.
+
+```bash
+docker compose up -d
+```
+
+The first run builds the application image from [`Dockerfile`](/Users/thomaswintherbonderup/Development/audit-engine-java/Dockerfile). Once the stack is up:
+
+- API: `http://localhost:8080`
+- Health: `http://localhost:8080/actuator/health`
+- Kafka UI: `http://localhost:8081`
+
+To stop the stack:
+
+```bash
+docker compose down
+```
+
 ---
 
 ## Target skill profile

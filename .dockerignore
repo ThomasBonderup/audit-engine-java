@@ -1,0 +1,10 @@
+.git
+.gradle
+build
+out
+target
+.DS_Store
+.idea
+.vscode
+README.md
+PLAN.md
