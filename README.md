@@ -48,6 +48,10 @@ To stop the stack:
 docker compose down
 ```
 
+## Workflow artifacts
+
+Execution state lives in `PLAN.md`, `tasks/`, `AGENTS.md`, and local Beads issues. Keep `PLAN.md` as a handoff log rather than a full history ledger by archiving older iteration blocks with `./bin/plan_handoff_rollover`.
+
 ---
 
 ## Target skill profile

@@ -45,3 +45,6 @@ out/
 .env
 application-local.yml
 application-local.properties
+
+# Beads / local issue state
+.beads/
