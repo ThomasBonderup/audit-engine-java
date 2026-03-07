@@ -207,10 +207,11 @@ Each week: ship **one meaningful slice** that improves credibility.
 ### Java fundamentals (core)
 
 - Immutability, records, value objects
-- Exceptions and Checked Exception vs result types (tradeoffs)
+- Exceptions and Checked Exceptions vs result types (tradeoffs)
 - Collections, generics, comparators
 - Concurrency: executors, virtual threads (Java 21), structured concurrency concepts
 - IO basics, serialization pitfalls
+- Functional Programming in Java (Lambda, Closures)
 
 ### Spring Boot fundamentals
 

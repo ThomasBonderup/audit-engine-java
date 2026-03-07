@@ -23,6 +23,7 @@ public class EvidenceIngestController {
 
   @PostMapping
   public ResponseEntity<Void> ingest(@RequestBody IngestEvidenceRequest req) {
+    System.out.println("HIT EvidenceIngestController: " + req);
     long auditRunId = 123L;
     EvidenceEnvelope envelope = EvidenceMapper.toEnvelope(req, auditRunId);
     ingestService.ingest(envelope);

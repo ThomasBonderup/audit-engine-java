@@ -2,7 +2,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,prometheus,loggers
+        include: health,info,metrics,prometheus,loggers,env,configprops
 
   endpoint:
     health:
@@ -27,3 +27,4 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "com.combotto.audit.*"
+        spring.json.value.default.type: com.combotto.audit.model.EvidenceEnvelope

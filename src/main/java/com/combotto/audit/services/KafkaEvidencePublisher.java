@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.stereotype.Component;
 
 import com.combotto.audit.model.EvidenceEnvelope;
 
+@Component
 public class KafkaEvidencePublisher implements EvidencePublisher {
 
   private final KafkaTemplate<String, EvidenceEnvelope> kafkaTemplate;
@@ -34,5 +36,4 @@ public class KafkaEvidencePublisher implements EvidencePublisher {
 
     kafkaTemplate.send(msg);
   }
-
 }

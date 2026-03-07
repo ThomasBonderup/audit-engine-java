@@ -6,6 +6,5 @@ public record IngestEvidenceRequest(
     String assetId,
     String probe,
     Instant collectedAt,
-    String rawJson,
-    long auditRunId) {
+    String rawJson) {
 }
